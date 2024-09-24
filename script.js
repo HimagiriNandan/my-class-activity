@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const usernameInput = document.getElementById('username');
   const passwordInput = document.getElementById('password');
   const roleInputs = document.querySelectorAll('input[name="role"]');
-  const rememberMeCheckbox = document.getElementById('rememberMe');
+//   const rememberMeCheckbox = document.getElementById('rememberMe');
   const messageDisplay = document.getElementById('message');
 
   usernameInput.addEventListener('input', () => {
@@ -21,9 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   });
 
-  rememberMeCheckbox.addEventListener('change', () => {
-      console.log('Remember Me:', rememberMeCheckbox.checked);
-  });
+//   rememberMeCheckbox.addEventListener('change', () => {
+//       console.log('Remember Me:', rememberMeCheckbox.checked);
+//   });
 
   loginForm.addEventListener('submit', (event) => {
       event.preventDefault();
@@ -31,14 +31,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const username = usernameInput.value;
       const password = passwordInput.value;
       const selectedRole = document.querySelector('input[name="role"]:checked')?.value;
-      const rememberMe = rememberMeCheckbox.checked;
+    //   const rememberMe = rememberMeCheckbox.checked;
 
       if (!username || !password || !selectedRole) {
           messageDisplay.textContent = "Please fill out all fields and select a role!";
           return;
       }
 
-      messageDisplay.textContent = `Welcome ${username}, you logged in as ${selectedRole}. Remember Me: ${rememberMe}`;
+      messageDisplay.textContent = `Welcome ${username}, you logged in as ${selectedRole}.`;
       messageDisplay.style.color = 'green';
   });
 });
